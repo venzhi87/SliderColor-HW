@@ -14,8 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var blueSlider: UISlider!
     
     @IBOutlet var viewColor: UIView!
-    @IBOutlet var viewColorGreen: UIView!
-    @IBOutlet var viewColorBlue: UIView!
+
     
     
     @IBOutlet var redValue: UILabel!
@@ -27,8 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        
         viewColor.layer.cornerRadius = 10
-        viewColorGreen.layer.cornerRadius = 10
-        viewColorBlue.layer.cornerRadius = 10
+
         
         redSlider.thumbTintColor = .red
         greenSlider.thumbTintColor = .green
@@ -51,15 +49,11 @@ class ViewController: UIViewController {
     @IBAction func greenSliderAction() {
         greenValue.text = String(format: "%.1f", greenSlider.value)
         
-        let sliderValue = CGFloat(greenSlider.value)
-        viewColorGreen.backgroundColor = viewColorGreen.backgroundColor?.withAlphaComponent(sliderValue)
-
     }
     @IBAction func blueSliderAction() {
         blueValue.text = String(format: "%.1f", blueSlider.value)
         
-        let sliderValue = CGFloat(blueSlider.value)
-        viewColorBlue.backgroundColor = viewColorBlue.backgroundColor?.withAlphaComponent(sliderValue)
+        
     }
     
     
