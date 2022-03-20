@@ -18,12 +18,14 @@ class ViewController: UIViewController {
     @IBOutlet var redValue: UILabel!
     @IBOutlet var greenValue: UILabel!
     @IBOutlet var blueValue: UILabel!
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
        
         viewColor.layer.cornerRadius = 10
+        
+        redSlider.value = 0.75
         
         redSlider.thumbTintColor = .red
         greenSlider.thumbTintColor = .green
@@ -32,28 +34,20 @@ class ViewController: UIViewController {
         redValue.text = "\(redSlider.value)"
         greenValue.text = "\(greenSlider.value)"
         blueValue.text = "\(blueSlider.value)"
-        
-//        viewColor.backgroundColor = UIColor(
-//            red: CGFloat(redSlider.value),
-//            green: CGFloat(greenSlider.value),
-//            blue: CGFloat(blueSlider.value),
-//            alpha: 1
-//        )
-        
+                
     }
     @IBAction func redSliderAction() {
-        redValue.text = String(format: "%.1f", redSlider.value)
-
-        
+        redValue.text = String(format: "%.2f", redSlider.value)
     }
+    
     @IBAction func greenSliderAction() {
-        greenValue.text = String(format: "%.1f", greenSlider.value)
-        
+        greenValue.text = String(format: "%.2f", greenSlider.value)
     }
+    
     @IBAction func blueSliderAction() {
-        blueValue.text = String(format: "%.1f", blueSlider.value)
-        
+        blueValue.text = String(format: "%.2f", blueSlider.value)
     }
+    
     @IBAction func rgbSlider() {
         viewColor.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
